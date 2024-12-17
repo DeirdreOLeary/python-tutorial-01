@@ -37,3 +37,41 @@ df_emp.describe()
 df_emp2 = pd.read_sql_query("SELECT * FROM public.windowing1;", engine)
 
 df_emp2.head()
+
+
+## CLEANSING DATA ##
+
+# Get the course data from the test.datacamp_courses2 table
+with engine.connect() as con:
+    rs = con.execute(text("SELECT * FROM test.datacamp_courses2;"))
+    df_course = pd.DataFrame(rs.fetchall())
+    df_course.columns = rs.keys()
+
+# Check for duplicates
+dupes_course = df_course.duplicated()
+print(dupes_course)
+
+# Remove '!' from course_name
+df_course['course_name'] = df_course['course_name'].str.strip('!')
+
+# Replace 'SQLL' with 'SQL' in topic
+df_course['topic'] = df_course['topic'].str.replace('LL', 'L')
+
+# Convert topic to a category
+df_course['topic'] = df_course['topic'].astype('category')
+
+# Set all topics to upper case
+df_course['topic'] = df_course['topic'].str.upper()
+
+# Checks for nulls in books_sold
+df_course['books_sold'].isna()
+df_course = df_course.fillna({'books_sold': 100})
+
+# Drop out-of-range values (i.e. any below 20)
+df_course = df_course[df_course['books_sold'] >= 20]
+
+# Get info about the course dataframe
+df_course.head(10)
+df_course.dtypes
+df_course.info()
+df_course['topic'].describe()
