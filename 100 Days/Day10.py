@@ -1,7 +1,7 @@
-# Use a while loop to print even numbers from 2 to 20.
+# Use a for loop to print numbers from 1 to 10
 
 i = 0
 
-while i < 20:
-    i += 2
+for i in range(0, 10):
+    i += 1
     print(i)
