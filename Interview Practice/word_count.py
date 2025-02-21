@@ -1,4 +1,4 @@
-# Write a function (word_count) to count the number of times a word appears in a list of sentences
+# Write a function (word_count) to count the number of times a case-insenstive word appears in a list of sentences
 
 def word_count(sentencelist):
     # Define an empty dictionary to hold the word counts
@@ -8,11 +8,11 @@ def word_count(sentencelist):
     for sentence in sentencelist:
         for word in sentence.split(' '):
             # If the word is not already in the dictionary, add it
-            if word not in word_counts:
-                word_counts[word] = 1
+            if word.lower() not in word_counts:
+                word_counts[word.lower()] = 1
             # Else, increment the count (value) associated with the word in the dictionary
             else:
-                word_counts[word] += 1
+                word_counts[word.lower()] += 1
 
     return word_counts
 
