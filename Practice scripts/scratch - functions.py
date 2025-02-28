@@ -18,7 +18,7 @@ fn_count_to_10(x=-11)
 
 
 def fn_type_of_arg_tuple(*t):
-   # asterisk converts argument to tuple (*args)
+   # asterisk converts argument to tuple allowing variable number of elements (*args)
     """This function takes elements as arguments & converts them to a tuple that it prints"""
     print(t)
     print(type(t))
@@ -29,7 +29,7 @@ print(fn_type_of_arg_tuple.__doc__)
 
 
 def fn_type_of_arg_dict(**d):
-    # double asterisk converst argument to dictionary (**kwargs)
+    # double asterisk converst argument to dictionary allowing variable number of elements (**kwargs)
     # keys must be strings, e.g. a, b, c or "x", "y", "z", not 1, 2, 3
     """
     This function takes key:value pairs as arguments.
