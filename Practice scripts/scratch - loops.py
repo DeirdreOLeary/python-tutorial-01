@@ -6,14 +6,14 @@ dict_1 = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"}
 
 if var_print == True:
     for i in dict_1.keys():
-        print(dict_1[i])
+        print(dict_1[i])    # prints values based on keys
 else:
     print("Not today!")
 
 for j in dict_1.values():
     print(j)
 
-for k in dict_1:
+for k in dict_1:            # equivalent to: for i in dict_1.keys()
     print(str(k) + " : " + dict_1[k])
 
 for x, y in dict_1.items():

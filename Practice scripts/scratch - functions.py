@@ -1,7 +1,7 @@
 ## FUNCTIONS ##
 
 # custom functions
-def fn_count_to_10(x=1):
+def fn_count_to_10(x=1):        # default of 1
     if x >= 10:
         print("Input value is too high")
     else:
@@ -18,16 +18,19 @@ fn_count_to_10(x=-11)
 
 
 def fn_type_of_arg_tuple(*t):
+   # asterisk converts argument to tuple (*args)
     """This function takes elements as arguments & converts them to a tuple that it prints"""
     print(t)
     print(type(t))
 
 
 fn_type_of_arg_tuple(1, 2, 3, 4)
-fn_type_of_arg_tuple.__doc__
+print(fn_type_of_arg_tuple.__doc__)
 
 
 def fn_type_of_arg_dict(**d):
+    # double asterisk converst argument to dictionary (**kwargs)
+    # keys must be strings, e.g. a, b, c or "x", "y", "z", not 1, 2, 3
     """
     This function takes key:value pairs as arguments.
     It then converts them to a dictionary & prints it.
@@ -38,7 +41,7 @@ def fn_type_of_arg_dict(**d):
 
 fn_type_of_arg_dict(a=1, b=2, c=3)
 fn_type_of_arg_dict(**{"x": 10, "y": 20, "z": 30})
-fn_type_of_arg_dict.__doc__
+print(fn_type_of_arg_dict.__doc__)
 
 
 def fn_error(x):
