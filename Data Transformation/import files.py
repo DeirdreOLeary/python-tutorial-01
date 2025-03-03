@@ -31,6 +31,11 @@ themes_df = pd.ExcelFile(themes_xlsx).parse(0, usecols=[1, 2])
 
 print(themes_df.head())
 
+# Alternatively, import a sheet from an Excel file
+themes_sheet_df = pd.read_excel(themes_xlsx, sheet_name='themes')
+
+print(themes_sheet_df.head())
+
 
 ## NUMPY ##
 
