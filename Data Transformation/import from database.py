@@ -1,4 +1,3 @@
-from networkx import could_be_isomorphic
 from sqlalchemy import create_engine, text
 import pandas as pd
 import urllib.parse as ulp
@@ -56,7 +55,7 @@ print(df_course_dupes)
 # Remove duplicates
 df_course = df_course.drop_duplicates()
 
-# Remove '!' from course_name
+# Strip '!' from start or end of course_name
 df_course['course_name'] = df_course['course_name'].str.strip('!')
 
 # Replace 'SQLL' with 'SQL' in topic
