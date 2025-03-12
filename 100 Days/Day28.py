@@ -11,8 +11,6 @@ for word in sentence.split(' '):
 words.reverse()
 
 # Convert the reversed list back to a sentence & print
-reversed_sentence = ''
-for word in words:
-    reversed_sentence += word + ' '
+reversed_sentence = ' '.join(words)
 
 print(reversed_sentence)
