@@ -9,6 +9,12 @@ print("Hello, ", name)
 print("You are ", age, " years old!")
 print("Your height is ", height, " metres.")
 
+# Alternative output
+print(f"Hello, {name}")
+print(f"You are {age} years old!")
+print(f"Your height is {height} metres.")
+
+
 # Splitting multiple inputs
 
 # Strings

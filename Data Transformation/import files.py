@@ -1,7 +1,11 @@
+import pandas as pd
+import numpy as np
+
 ## BASIC IMPORT ##
 
 # read a text file
 # note: the context for python execution is python-tutorial-01, not python-tutorial-01/Data Transformation where the script is saved.
+
 with open('../sample-data/test.txt', 'r') as txt_file:
     print(txt_file.read())
 
@@ -10,15 +14,14 @@ with open('../sample-data/test.txt', 'r') as txt_file:
     print(txt_file.readline())
     print(txt_file.readline())
 
+
 ## PANDAS ##
 
-# import csv data
-import pandas as pd
-
+# import csv data to a dataframe
 colours_csv = '../sample-data/colors.csv'
 colours_data = pd.read_csv(colours_csv, sep=',', na_values='[Unknown]')
 
-colours_data.head()
+print(colours_data.head())
 
 print(type(colours_data))
 
@@ -26,4 +29,25 @@ print(type(colours_data))
 themes_xlsx = '../sample-data/themes.xlsx'
 themes_df = pd.ExcelFile(themes_xlsx).parse(0, usecols=[1, 2])
 
-themes_df.head()
+print(themes_df.head())
+
+# Alternatively, import a sheet from an Excel file
+themes_sheet_df = pd.read_excel(themes_xlsx, sheet_name='themes')
+
+print(themes_sheet_df.head())
+
+
+## NUMPY ##
+
+# import numeric data to array
+num_file = '../sample-data/numbers.txt'
+num_array = np.loadtxt(num_file, delimiter='\t', skiprows=1)
+
+print(num_array)
+
+# import mixed numeric & string data with headers (only 1st & 3rd columns)
+mix_file = '../sample-data/mixed.txt'
+mix_array = np.genfromtxt(mix_file, delimiter='\t',
+                          names=True, dtype=None, usecols=[0, 2])
+
+print(mix_array)

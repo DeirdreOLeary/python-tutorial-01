@@ -15,7 +15,7 @@ urlretrieve('https://cdn.rebrickable.com/media/downloads/colors.csv.gz',
 
 df = pd.read_csv('https://cdn.rebrickable.com/media/downloads/colors.csv.gz')
 
-df.head()
+print(df.head())
 
 
 ## IMPORT SPREADSHEET ##

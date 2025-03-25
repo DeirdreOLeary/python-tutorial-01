@@ -16,10 +16,10 @@ for key, value in json_data.items():
         print(key + ': ', value)
 
 # Get information about the request (status, content type of the reponse, etc)
-response.status_code
-response.headers['Content-Type']
-response.headers['Content-Encoding']
-response.headers['last-modified']
+print(response.status_code)
+print(response.headers['Content-Type'])
+print(response.headers['Content-Encoding'])
+print(response.headers['last-modified'])
 
 
 ## IMPORT USING PARAMETERS ##
