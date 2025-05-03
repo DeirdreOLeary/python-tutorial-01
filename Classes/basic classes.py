@@ -1,4 +1,4 @@
-# Simple class
+# Simple class with an attribute (x). Attributes are variables/characteristics that belong to the entire class rather than a specific instance.
 class MyClass:
     x = 5
 
@@ -57,3 +57,24 @@ class Person3:
     
 p3 = Person3("Martina", 76)
 print(p3.myfunc())
+
+
+# Polymorphism allows us to have multiple classes with the same name.
+class Square:
+    def __init__(self, height):
+        self.height = height
+    
+    def name(self):
+        print('Square')
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def name(self):
+        print('Circle')
+
+s = Square(4)
+c = Circle(5)
+s.name()
+c.name()
